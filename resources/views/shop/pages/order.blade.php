@@ -3,10 +3,8 @@
 @section('content')
 @include('shop/_partials/errors')
 <div class="orders">
-<form action="/placeOrder{{$post->id}}" method="post">
+<form action="/placeOrder" method="post">
     {{csrf_field()}}
-    <h4>{{$post->title}}</h4>
-    <h4>{{$post->price}}$</h4>
     <div>
         <h6 for="name">Name</h6>
         <input type="text" name="name"></input>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Cart;
+use App\Orderlist;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,22 +22,34 @@ class OrderController extends Controller
         //
     }
 
-    public function order(Post $post) {
-        return view('shop.pages.order', compact('post'));
+    public function order() {
+        return view('shop.pages.order');
     }
 
-    public function placeOrder(Request $request, Post $post) {
-        Order::create([
+    public function placeOrder(Request $request) {
+        $cart = Cart::where(['user_id' => Auth::user()->id])->get();
+        $price = Cart::where(['user_id' => Auth::user()->id])->sum('price');
+        $id = Order::create([
             'name' => request('name'),
             'lastname' => request('lastname'),
             'user_id' => Auth::id(),
             'address' => request('address'),
             'contact' => request('contact'),
-            'price' => $post->price,
-            'product_id' => $post->id,
-            'product_name' => $post->title
+            'price' => $price
         ]);
+        
+        foreach($cart as $item) {
+            Orderlist::create([
+                'order_id' => $id->id,
+                'product_id' => $item->product_id,
+                'user_id' => Auth::id(),
+                'product_name' => $item->product_name,
+                'price' => $item->price
+        ]);
+        }
 
-        return redirect('/');
+        Cart::where(['user_id' => Auth::user()->id])->delete();
+
+        return redirect('/admin');
     }
 }

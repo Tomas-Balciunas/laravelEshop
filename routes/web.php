@@ -25,8 +25,11 @@ Route::get('/post/{post}', 'BlogController@show');
 Route::post('/post/{post}/comment', 'CommentController@addComment');
 Route::post('/storecategory', 'CategoryController@storecategory');
 Route::get('/category/{item}', 'CategoryController@showCategory');
-Route::get('/order/{post}', 'OrderController@order');
-Route::post('/placeOrder{post}', 'OrderController@placeOrder');
+Route::get('/order', 'OrderController@order');
+Route::post('/placeOrder', 'OrderController@placeOrder');
+Route::get('/cart', 'CartController@index');
+Route::post('/addToCart/{post}', 'CartController@addToCart');
+
 
 
 

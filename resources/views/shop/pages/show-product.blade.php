@@ -21,9 +21,10 @@
             @if ($post->quantity == 0)
             <h5>Prekių neliko</h5>
             @else
-            <a href="/order/{{$post->id}}">
-                <h5>Užsakyti</h5>
-            </a>
+            <form action="/addToCart/{{$post->id}}" method="post">
+            {{csrf_field()}}
+                <button type="submit">Į Krepšelį</button>
+            </form>
             @endif
         </div>
     </div>

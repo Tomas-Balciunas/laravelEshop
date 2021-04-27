@@ -21,9 +21,11 @@
             <?php if($post->quantity == 0): ?>
             <h5>Prekių neliko</h5>
             <?php else: ?>
-            <a href="/order/<?php echo e($post->id); ?>">
-                <h5>Užsakyti</h5>
-            </a>
+            <form action="/addToCart/<?php echo e($post->id); ?>" method="post">
+            <?php echo e(csrf_field()); ?>
+
+                <button type="submit">Į Krepšelį</button>
+            </form>
             <?php endif; ?>
         </div>
     </div>

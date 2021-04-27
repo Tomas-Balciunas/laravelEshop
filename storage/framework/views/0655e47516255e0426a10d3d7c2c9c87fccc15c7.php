@@ -1,7 +1,7 @@
 <nav class="">
             <div class="navcont">
                 <div id="iconcont">
-                    <a href="/"><img src="<?php echo e(asset('img/shopicon.png')); ?>" id="shopicon"></a>
+                    <a href="/"><img src="<?php echo e(asset('img/shopicon.png')); ?>" class="shopicon"></a>
                 </div>
                 <div class="navbarcont">
                     <div class="navbar">
@@ -20,6 +20,9 @@
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
+                </div>
+                <div id="carticoncont">
+                    <a href="/cart"><img src="<?php echo e(asset('img/carticon.png')); ?>" class="shopicon"></a>
                 </div>
             </div>
         </nav><?php /**PATH C:\Users\Tom\Desktop\shop\resources\views/shop/_partials/nav.blade.php ENDPATH**/ ?>

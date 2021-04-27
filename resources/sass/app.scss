@@ -8,12 +8,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    background-color: rgb(226, 194, 194);
+    //background-color: rgb(226, 194, 194);
+    background-color: white;
 }
 
-#shopicon {
+.shopicon {
     width: 6em;
 }
+
+
 
 .maincont {
     display: flex;
@@ -30,6 +33,14 @@ body {
     #iconcont {
         padding: 0.5em;
         background-color: rgb(214, 103, 39);
+    }
+
+    #carticoncont {
+        padding: 0.5em;
+        background-color: rgb(65, 201, 224);
+        a {
+            outline: none;
+        }
     }
 
     .navbarcont {
@@ -111,6 +122,8 @@ body {
     height: auto;
     display: flex;
     justify-content: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 
     .order {
         display:flex;
@@ -305,7 +318,7 @@ body {
                 margin-top: 0.5em;
             }
 
-            h5 {
+            button, h5 {
                 color: white;
                 background-color: rgb(58, 58, 58);
                 padding: 0.5em;
@@ -316,9 +329,10 @@ body {
                 left: 50%;
                 bottom: 0;
                 transform: translateX(-50%);
+                border: none;
             }
 
-            h5:hover {
+            button:hover {
                 background-color: rgb(214, 103, 39);
                 cursor: pointer;
             }

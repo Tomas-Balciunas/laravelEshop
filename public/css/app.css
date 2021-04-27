@@ -10943,10 +10943,10 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: #e2c2c2;
+  background-color: white;
 }
 
-#shopicon {
+.shopicon {
   width: 6em;
 }
 
@@ -10966,6 +10966,15 @@ body {
 .navcont #iconcont {
   padding: 0.5em;
   background-color: #d66727;
+}
+
+.navcont #carticoncont {
+  padding: 0.5em;
+  background-color: #41c9e0;
+}
+
+.navcont #carticoncont a {
+  outline: none;
 }
 
 .navcont .navbarcont {
@@ -11050,6 +11059,8 @@ body {
   height: auto;
   display: flex;
   justify-content: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .collcont .order {
@@ -11250,6 +11261,7 @@ body {
   margin-top: 0.5em;
 }
 
+.viewcont .viewproduct .productinfo button,
 .viewcont .viewproduct .productinfo h5 {
   color: white;
   background-color: #3a3a3a;
@@ -11263,9 +11275,10 @@ body {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+  border: none;
 }
 
-.viewcont .viewproduct .productinfo h5:hover {
+.viewcont .viewproduct .productinfo button:hover {
   background-color: #d66727;
   cursor: pointer;
 }

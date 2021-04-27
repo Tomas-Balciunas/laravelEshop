@@ -1,7 +1,7 @@
 <nav class="">
             <div class="navcont">
                 <div id="iconcont">
-                    <a href="/"><img src="{{asset('img/shopicon.png')}}" id="shopicon"></a>
+                    <a href="/"><img src="{{asset('img/shopicon.png')}}" class="shopicon"></a>
                 </div>
                 <div class="navbarcont">
                     <div class="navbar">
@@ -20,6 +20,9 @@
                         </div>
                         @endforeach
                     </div>
+                </div>
+                <div id="carticoncont">
+                    <a href="/cart"><img src="{{asset('img/carticon.png')}}" class="shopicon"></a>
                 </div>
             </div>
         </nav>

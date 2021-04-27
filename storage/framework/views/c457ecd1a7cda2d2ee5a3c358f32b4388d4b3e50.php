@@ -3,11 +3,9 @@
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('shop/_partials/errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div class="orders">
-<form action="/placeOrder<?php echo e($post->id); ?>" method="post">
+<form action="/placeOrder" method="post">
     <?php echo e(csrf_field()); ?>
 
-    <h4><?php echo e($post->title); ?></h4>
-    <h4><?php echo e($post->price); ?>$</h4>
     <div>
         <h6 for="name">Name</h6>
         <input type="text" name="name"></input>
