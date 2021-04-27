@@ -47,22 +47,24 @@
 
     <button class="coll">Mano užsakymai</button>
     <div class="collcont">
-        <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="order">
-            <div>
-                <span>Prekės pavadinimas: <?php echo e($order->product_name); ?></span>
-            </div>
-            <div>
-                <span>Prekės kaina: <?php echo e($order->price); ?>$</span>
-            </div>
-            <div>
-                <span>Pristatymo adresas: <?php echo e($order->address); ?></span>
-            </div>
-            <div>
-                <span>Užsakymo data: <?php echo e($order->created_at); ?></span>
-            </div>
+            <table>
+                <tr>
+                    <th>Užsakymo nr.</th>
+                    <th>Užsakymo kaina</th>
+                    <th>Pristatymo adresas</th>
+                    <th>Užsakymo data</th>
+                </tr>
+                <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                    <td><?php echo e($order->id); ?></td>
+                    <td><?php echo e($order->price); ?>$</td>
+                    <td><?php echo e($order->address); ?></td>
+                    <td><?php echo e($order->created_at); ?></td>
+                </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </table>
         </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
     <!----- USER PRODUCTS ----->

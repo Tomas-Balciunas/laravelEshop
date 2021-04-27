@@ -10950,14 +10950,6 @@ body {
   width: 6em;
 }
 
-.maincont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
-
 .navcont {
   display: flex;
   width: 100%;
@@ -11035,7 +11027,15 @@ body {
   background-color: dimgray;
 }
 
-.coll {
+.maincont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.maincont .coll {
   background-color: #3a3a3a;
   color: white;
   border: none;
@@ -11045,12 +11045,12 @@ body {
   padding: 0.5em;
 }
 
-.active,
-.coll:hover {
+.maincont .active,
+.maincont .coll:hover {
   background-color: #d66727;
 }
 
-.collcont {
+.maincont .collcont {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
@@ -11063,40 +11063,55 @@ body {
   padding-right: 0.5em;
 }
 
-.collcont .order {
+.maincont .collcont .order {
   display: flex;
   flex-direction: column;
-  padding: 1em;
 }
 
-.collcont .addproduct {
+.maincont .collcont .order table {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.maincont .collcont .order table th {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+.maincont .collcont .order table td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.5em;
+}
+
+.maincont .collcont .addproduct {
   width: 20em;
 }
 
-.collcont .addproduct input,
-.collcont .addproduct textarea {
+.maincont .collcont .addproduct input,
+.maincont .collcont .addproduct textarea {
   width: 20em;
   margin-bottom: 1em;
 }
 
-.collcont .addproduct select {
+.maincont .collcont .addproduct select {
   margin-bottom: 1em;
 }
 
-.collcont .addproduct button {
+.maincont .collcont .addproduct button {
   width: 20em;
 }
 
-.collcont input[type=number] {
+.maincont .collcont input[type=number] {
   -moz-appearance: textfield;
 }
 
-.collcont input::-webkit-outer-spin-button,
-.collcont input::-webkit-inner-spin-button {
+.maincont .collcont input::-webkit-outer-spin-button,
+.maincont .collcont input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.collcont button {
+.maincont .collcont button {
   color: white;
   background-color: #3a3a3a;
   padding: 0.5em;
@@ -11104,7 +11119,7 @@ body {
   border: none;
 }
 
-.collcont button:hover {
+.maincont .collcont button:hover {
   background-color: #d66727;
 }
 
@@ -11397,5 +11412,65 @@ body {
 
 .updatecont button {
   width: 20em;
+}
+
+.cartview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartview table {
+  text-align: center;
+}
+
+.cartview table .line {
+  background-color: #d66727;
+  color: white;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.cartview table .cells {
+  background-color: #3a3a3a;
+  color: white;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+}
+
+.cartview table .del {
+  background-color: #3a3a3a;
+  text-align: center;
+}
+
+.cartview table #del {
+  color: red;
+  background-color: #3a3a3a;
+  padding: 0.2em 0.8em 0.2em 0.6em;
+  font-size: 1em;
+  outline: none;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+.cartview table a {
+  text-decoration: none;
+  outline: none;
+}
+
+.cartview h4 {
+  margin-top: 1em;
+}
+
+.cartview #buy {
+  color: white;
+  background-color: #3a3a3a;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  outline: none;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+.cartview #buy:hover {
+  background-color: #d66727;
 }
 

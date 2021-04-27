@@ -45,22 +45,24 @@
 
     <button class="coll">Mano užsakymai</button>
     <div class="collcont">
-        @foreach($orders as $order)
         <div class="order">
-            <div>
-                <span>Prekės pavadinimas: {{$order->product_name}}</span>
-            </div>
-            <div>
-                <span>Prekės kaina: {{$order->price}}$</span>
-            </div>
-            <div>
-                <span>Pristatymo adresas: {{$order->address}}</span>
-            </div>
-            <div>
-                <span>Užsakymo data: {{$order->created_at}}</span>
-            </div>
+            <table>
+                <tr>
+                    <th>Užsakymo nr.</th>
+                    <th>Užsakymo kaina</th>
+                    <th>Pristatymo adresas</th>
+                    <th>Užsakymo data</th>
+                </tr>
+                @foreach($orders as $order)
+                <tr>
+                    <td>{{$order->id}}</td>
+                    <td>{{$order->price}}$</td>
+                    <td>{{$order->address}}</td>
+                    <td>{{$order->created_at}}</td>
+                </tr>
+                @endforeach
+            </table>
         </div>
-        @endforeach
     </div>
 
     <!----- USER PRODUCTS ----->

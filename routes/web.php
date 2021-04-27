@@ -29,10 +29,7 @@ Route::get('/order', 'OrderController@order');
 Route::post('/placeOrder', 'OrderController@placeOrder');
 Route::get('/cart', 'CartController@index');
 Route::post('/addToCart/{post}', 'CartController@addToCart');
-
-
-
-
+Route::get('/remove/{post}', 'CartController@remove');
 
 
 Auth::routes();

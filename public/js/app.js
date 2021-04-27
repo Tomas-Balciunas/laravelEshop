@@ -49799,6 +49799,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    toFinite = _require.toFinite;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49837,6 +49840,17 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+var td = document.getElementsByClassName('count');
+var totalcol = document.querySelector('#total');
+var total = 0;
+
+for (i = 0; i < td.length; i++) {
+  thistd = td[i].innerHTML.slice(0, -1);
+  total = total + parseInt(thistd);
+}
+
+totalcol.innerHTML = total;
 
 /***/ }),
 

@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { toFinite } = require('lodash');
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -45,3 +47,14 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
+
+let td = document.getElementsByClassName('count');
+let totalcol = document.querySelector('#total');
+let total = 0;
+
+for (i = 0; i < td.length; i++) {
+  thistd = td[i].innerHTML.slice(0, -1);
+  total = total + parseInt(thistd);
+}
+
+totalcol.innerHTML = total;

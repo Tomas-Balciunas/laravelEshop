@@ -3,15 +3,28 @@
 @if (count($posts) == 0)
 <h2 style="text-align: center;">Prekių krepšelyje nėra</h2>
 @else
-<div>
-    @foreach($posts as $post)
+<div class="cartview">
+    <table>
+        <tr>
+            <th class="line">Prekės pavadinimas</th>
+            <th class="line">Kaina</th>
+        </tr>
+        @foreach($posts as $post)
+        <tr>
+            <td class="cells">
+                <a href="/post/{{$post->id}}">
+                    {{$post->product_name}}
+                </a>
+            </td>
+            <td class="count cells">{{$post->price}}$</td>
+            <td class="del"><a id="del" href="/remove/{{$post->id}}">X</a></td>
+        </tr>
+        @endforeach
+    </table>
     <div>
-        <p>{{$post->product_name}}</p>
-        <p>{{$post->price}}</p>
+        <h4>Iš viso: <span id="total"></span>$</h4>
     </div>
-    @endforeach
+    <a id="buy" href="/order">Pirkti</a>
 </div>
-
-<a href="/order">Pirkti</a>
 @endif
 @endsection
