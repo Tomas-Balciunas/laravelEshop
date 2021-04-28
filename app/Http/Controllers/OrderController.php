@@ -33,8 +33,14 @@ class OrderController extends Controller
     }
 
     public function placeOrder(Request $request) {
+        $add = Cart::where(['user_id' => Auth::user()->id])->get();
+        foreach($add as $item) {
+            $item->total_price = $item->price * $item->quantity;
+        $item->save();
+        }
+
         $cart = Cart::where(['user_id' => Auth::user()->id])->get();
-        $price = Cart::where(['user_id' => Auth::user()->id])->sum('price');
+        $price = Cart::where(['user_id' => Auth::user()->id])->sum('total_price');
         $id = Order::create([
             'name' => request('name'),
             'lastname' => request('lastname'),
@@ -50,7 +56,9 @@ class OrderController extends Controller
                 'product_id' => $item->product_id,
                 'user_id' => Auth::id(),
                 'product_name' => $item->product_name,
-                'price' => $item->price
+                'price' => $item->price,
+                'quantity' => $item->quantity,
+                'total_price' => $item->total_price
         ]);
         }
 

@@ -49841,15 +49841,26 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-var td = document.getElementsByClassName('count');
+var td = document.getElementsByClassName('totalprice');
 var totalcol = document.querySelector('#total');
 var total = 0;
+var trs = document.querySelectorAll('tr');
+
+for (var _i = 1; _i < trs.length; _i++) {
+  var price = trs[_i].cells[1].innerHTML.slice(0, -1);
+
+  console.log(price);
+  var quantity = trs[_i].cells[3].innerHTML;
+  var answer = quantity * price;
+  console.log(answer);
+  trs[_i].cells[5].innerHTML = answer.toFixed(2) + "$";
+}
 
 for (i = 0; i < td.length; i++) {
   var thistd = 0;
-  thistd = td[i].innerHTML.slice(0, -1);
+  thistd = td[i].innerHTML; //.slice(0, -1);
+
   total = total + parseFloat(thistd);
-  console.log(total);
 }
 
 totalcol.innerHTML = total.toFixed(2);

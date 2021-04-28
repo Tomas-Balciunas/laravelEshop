@@ -8,19 +8,33 @@
         <tr>
             <th>Prekės pavadinimas</th>
             <th>Kaina</th>
+            <th></th>
+            <th>Kiekis</th>
+            <th></th>
+            <th>Pilna kaina</th>
         </tr>
-        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <tr>
-            <td class="cartproduct">
-                <a href="/post/<?php echo e($post->id); ?>">
-                    <?php echo e($post->product_name); ?>
+        <tbody class="carttable">
+            <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <tr>
+                <td class="cartproduct">
+                    <a href="/post/<?php echo e($post->product_id); ?>">
+                        <?php echo e($post->product_name); ?>
 
-                </a>
-            </td>
-            <td class="count"><?php echo e($post->price); ?>$</td>
-            <td class="del"><a id="del" href="/remove/<?php echo e($post->id); ?>">X</a></td>
-        </tr>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </a>
+                </td>
+                <td class="count"><?php echo e($post->price); ?>$</td>
+                <td>
+                    <form method="POST" action="/removequantity/<?php echo e($post->id); ?>"><?php echo e(csrf_field()); ?><button type="submit">-</button></form>
+                </td>
+                <td class="quantity"><?php echo e($post->quantity); ?></td>
+                <td>
+                    <form method="POST" action="/addquantity/<?php echo e($post->id); ?>"><?php echo e(csrf_field()); ?><button type="submit">+</button></form>
+                </td>
+                <td class="totalprice"></td>
+                <td class="del"><a id="del" href="/remove/<?php echo e($post->id); ?>">X</a></td>
+            </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </tbody>
     </table>
     <div>
         <h4>Iš viso: <span id="total"></span>$</h4>

@@ -11446,6 +11446,18 @@ body {
   padding: 0.7em 1.2em;
 }
 
+.cartview table tr th form button,
+.cartview table tr td form button {
+  background-color: #3a3a3a;
+  border: none;
+  color: white;
+}
+
+.cartview table tr th form button:hover,
+.cartview table tr td form button:hover {
+  background-color: #d66727;
+}
+
 .cartview table tr .cartproduct {
   text-align: start;
 }

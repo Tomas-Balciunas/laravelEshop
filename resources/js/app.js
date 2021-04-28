@@ -48,15 +48,25 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-let td = document.getElementsByClassName('count');
+
+let td = document.getElementsByClassName('totalprice');
 let totalcol = document.querySelector('#total');
 let total = 0;
+let trs = document.querySelectorAll('tr');
+
+for(let i = 1; i < trs.length; i++) {
+  let price = trs[i].cells[1].innerHTML.slice(0, -1);
+  console.log(price);
+  var quantity = trs[i].cells[3].innerHTML;
+  var answer = quantity * price;
+  console.log(answer);
+  trs[i].cells[5].innerHTML = answer.toFixed(2) + "$";
+}
 
 for (i = 0; i < td.length; i++) {
   let thistd = 0;
-  thistd = td[i].innerHTML.slice(0, -1);
+  thistd = td[i].innerHTML;//.slice(0, -1);
   total =  total + parseFloat(thistd);
-  console.log(total);
 }
 
 totalcol.innerHTML = total.toFixed(2);

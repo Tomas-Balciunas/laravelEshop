@@ -31,6 +31,8 @@ Route::get('/cart', 'CartController@index');
 Route::post('/addToCart/{post}', 'CartController@addToCart');
 Route::get('/remove/{post}', 'CartController@remove');
 Route::get('/vieworder/{order}', 'OrderController@vieworder');
+Route::post('/addquantity/{post}', 'CartController@addquantity');
+Route::post('/removequantity/{post}', 'CartController@removequantity');
 
 
 

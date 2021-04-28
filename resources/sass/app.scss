@@ -511,6 +511,18 @@ body {
 
             th, td {
                 padding: 0.7em 1.2em;
+
+                form {
+                    button {
+                        background-color: rgb(58, 58, 58);
+                        border: none;
+                        color: white;
+                    }
+
+                    button:hover {
+                        background-color: rgb(214, 103, 39);
+                    }
+                }
             }
 
             .cartproduct {
