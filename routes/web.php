@@ -30,6 +30,8 @@ Route::post('/placeOrder', 'OrderController@placeOrder');
 Route::get('/cart', 'CartController@index');
 Route::post('/addToCart/{post}', 'CartController@addToCart');
 Route::get('/remove/{post}', 'CartController@remove');
+Route::get('/vieworder/{order}', 'OrderController@vieworder');
+
 
 
 Auth::routes();

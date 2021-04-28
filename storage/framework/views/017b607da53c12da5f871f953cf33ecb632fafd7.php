@@ -57,7 +57,7 @@
                 </tr>
                 <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td><?php echo e($order->id); ?></td>
+                    <td><a href="/vieworder/<?php echo e($order->id); ?>"><?php echo e($order->id); ?></a></td>
                     <td><?php echo e($order->price); ?>$</td>
                     <td><?php echo e($order->address); ?></td>
                     <td><?php echo e($order->created_at); ?></td>

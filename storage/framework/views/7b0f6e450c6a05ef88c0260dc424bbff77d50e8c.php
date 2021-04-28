@@ -6,18 +6,18 @@
 <div class="cartview">
     <table>
         <tr>
-            <th class="line">Prekės pavadinimas</th>
-            <th class="line">Kaina</th>
+            <th>Prekės pavadinimas</th>
+            <th>Kaina</th>
         </tr>
         <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <td class="cells">
+            <td class="cartproduct">
                 <a href="/post/<?php echo e($post->id); ?>">
                     <?php echo e($post->product_name); ?>
 
                 </a>
             </td>
-            <td class="count cells"><?php echo e($post->price); ?>$</td>
+            <td class="count"><?php echo e($post->price); ?>$</td>
             <td class="del"><a id="del" href="/remove/<?php echo e($post->id); ?>">X</a></td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

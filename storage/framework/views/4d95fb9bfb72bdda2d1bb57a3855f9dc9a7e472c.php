@@ -21,6 +21,8 @@
         </a>
     </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
 </div>
+<div class="paginate"><?php echo $posts->links(); ?></div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('shop/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Tom\Desktop\shop\resources\views/shop/pages/home.blade.php ENDPATH**/ ?>

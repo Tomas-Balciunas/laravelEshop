@@ -49846,11 +49846,13 @@ var totalcol = document.querySelector('#total');
 var total = 0;
 
 for (i = 0; i < td.length; i++) {
+  var thistd = 0;
   thistd = td[i].innerHTML.slice(0, -1);
-  total = total + parseInt(thistd);
+  total = total + parseFloat(thistd);
+  console.log(total);
 }
 
-totalcol.innerHTML = total;
+totalcol.innerHTML = total.toFixed(2);
 
 /***/ }),
 

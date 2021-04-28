@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->integer('contact');
             $table->integer('user_id');
-            $table->integer('price')->nullable();
+            $table->decimal('price');
             $table->timestamps();
         });
     }

@@ -6,17 +6,17 @@
 <div class="cartview">
     <table>
         <tr>
-            <th class="line">Prekės pavadinimas</th>
-            <th class="line">Kaina</th>
+            <th>Prekės pavadinimas</th>
+            <th>Kaina</th>
         </tr>
         @foreach($posts as $post)
         <tr>
-            <td class="cells">
+            <td class="cartproduct">
                 <a href="/post/{{$post->id}}">
                     {{$post->product_name}}
                 </a>
             </td>
-            <td class="count cells">{{$post->price}}$</td>
+            <td class="count">{{$post->price}}$</td>
             <td class="del"><a id="del" href="/remove/{{$post->id}}">X</a></td>
         </tr>
         @endforeach

@@ -19,7 +19,7 @@ class CreateOrderlistsTable extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->string('product_name');
-            $table->integer('price');
+            $table->decimal('price');
             $table->timestamps();
         });
     }

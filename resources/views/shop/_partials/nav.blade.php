@@ -5,12 +5,12 @@
         </div>
         <div class="navbarcont">
             <div class="navbar">
-                <div class=""><a class="" href="/">Pradinis</a></div>
-                <div class=""><a class="" href="/admin">Admin</a></div>
+                <a href="/"><div><h5>Pradinis</h5></div></a>
+                <a href="/admin"><div><h5>Admin</h5></div></a>
                 @if (Auth::check())
-                <div class=""><a class="" href="/logout">Atsijungti</a></div>
+                <a href="/logout"><div><h5>Atsijungti</h5></div></a>
                 @else
-                <div class=""><a class="" href="/login">Prisijungti</a></div>
+                <a href="/login"><div><h5>Prisijungti</h5></div></a>
                 @endif
             </div>
             <div class="categorycont">

@@ -10986,21 +10986,28 @@ body {
 
 .navcont .navbarcont .navbar a {
   color: white;
-  font-size: 1.2rem;
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .navcont .navbarcont .navbar div {
   height: 100%;
-  width: 10%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.navcont .navbarcont .navbar a:hover,
-.navcont .navbarcont .navbar div:hover {
+.navcont .navbarcont .navbar div h5 {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.navcont .navbarcont .navbar a:hover {
   text-decoration: none;
-  background-color: dimgray;
+  background-color: #d66727;
 }
 
 .navcont .navbarcont .categorycont {
@@ -11070,17 +11077,15 @@ body {
 
 .maincont .collcont .order table {
   text-align: center;
-  border: 1px solid black;
 }
 
 .maincont .collcont .order table th {
-  border: 1px solid black;
+  border-bottom: 1px solid gray;
   padding: 0.5em;
 }
 
 .maincont .collcont .order table td {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
   padding: 0.5em;
 }
 
@@ -11218,6 +11223,12 @@ body {
   margin: 0.5em;
   word-wrap: break-word;
   height: 3em;
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
 }
 
 .viewcont {
@@ -11425,26 +11436,26 @@ body {
   text-align: center;
 }
 
-.cartview table .line {
-  background-color: #d66727;
-  color: white;
-  padding: 0.5em 1em 0.5em 1em;
+.cartview table tr {
+  border-bottom: 1px solid #3a3a3a;
+  font-size: 1.2em;
 }
 
-.cartview table .cells {
-  background-color: #3a3a3a;
-  color: white;
-  padding: 0.5em 1.5em 0.5em 1.5em;
+.cartview table tr th,
+.cartview table tr td {
+  padding: 0.7em 1.2em;
+}
+
+.cartview table tr .cartproduct {
+  text-align: start;
 }
 
 .cartview table .del {
-  background-color: #3a3a3a;
   text-align: center;
 }
 
 .cartview table #del {
   color: red;
-  background-color: #3a3a3a;
   padding: 0.2em 0.8em 0.2em 0.6em;
   font-size: 1em;
   outline: none;
@@ -11453,7 +11464,6 @@ body {
 }
 
 .cartview table a {
-  text-decoration: none;
   outline: none;
 }
 

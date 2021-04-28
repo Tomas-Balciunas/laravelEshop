@@ -7,7 +7,7 @@
     </div>
     <div class="viewproduct">
         <div class="productimg">
-            <img src="{{asset('/storage/'.$post->path)}}" alt="????">
+            <img src="{{asset('/storage/'.$post->path)}}" class="bigimg" alt="????">
         </div>
         <div class="productinfo">
             <span>Kategorija:</span>

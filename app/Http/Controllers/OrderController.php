@@ -26,6 +26,12 @@ class OrderController extends Controller
         return view('shop.pages.order');
     }
 
+    public function vieworder(Order $order) {
+        $orders = Orderlist::where(['order_id' => $order->id])->get();
+
+        return view('shop.pages.view-order', compact('orders'));
+    }
+
     public function placeOrder(Request $request) {
         $cart = Cart::where(['user_id' => Auth::user()->id])->get();
         $price = Cart::where(['user_id' => Auth::user()->id])->sum('price');
