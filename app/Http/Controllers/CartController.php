@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['addToCart']);
+    }
+
     public function index()
     {
         $posts = Cart::where(['user_id' => Auth::id()])->get();
