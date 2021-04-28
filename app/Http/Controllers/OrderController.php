@@ -34,9 +34,13 @@ class OrderController extends Controller
 
     public function placeOrder(Request $request) {
         $add = Cart::where(['user_id' => Auth::user()->id])->get();
+        
         foreach($add as $item) {
             $item->total_price = $item->price * $item->quantity;
-        $item->save();
+            $post = Post::where(['id' => $item->product_id])->first();
+            $post->quantity = $post->quantity - $item->quantity;
+            $post->save();
+            $item->save();
         }
 
         $cart = Cart::where(['user_id' => Auth::user()->id])->get();

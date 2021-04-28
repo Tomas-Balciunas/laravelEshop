@@ -29,30 +29,26 @@ class CartController extends Controller
         return back();
     }
 
-    public function remove(Cart $post)
-    {
+    public function remove(Cart $post) {
         Cart::where(['id' => $post->id])->delete();
-
         return back();
     }
 
-    
     public function addquantity (Cart $post) {
         $add = Cart::find($post->id);
-        $add->increment('quantity');
-        //$add->total_price = $post->price * $post->quantity;
-        //$add->save();
+        $quantity = Post::where(['id' => $add->product_id])->pluck('quantity');
+        if ($add->quantity < $quantity[0]) {
+            $add->increment('quantity');
+        }
 
         return back();
     }
 
     public function removequantity (Cart $post) {
-        //if (Cart::where(['id' => $post->id])->find($post->quantity) > 1) {
         $add = Cart::find($post->id);
-        $add->decrement('quantity');
-        $add->total_price = $post->price * $post->quantity;
-        $add->save();
-        
+        if ($add->quantity > 1) {
+            $add->decrement('quantity');
+        }
 
         return back();
     }

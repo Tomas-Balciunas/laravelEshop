@@ -5,11 +5,13 @@
     <tr>
         <th>Prekės pavadinimas</th>
         <th>Kaina</th>
+        <th>Kiekis</th>
     </tr>
     <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <tr>
         <td class="cartproduct"><?php echo e($item->product_name); ?></td>
         <td><?php echo e($item->price); ?>$</td>
+        <td><?php echo e($item->quantity); ?></td>
     </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </table>
