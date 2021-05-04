@@ -1,0 +1,15 @@
+---
+application:
+  name: "laravelshop"
+  project: "laravelshop"
+  organization: "QoveryCommunity"
+databases:
+- type: "MYSQL"
+  name: "shop"
+  version: "8.0"
+routers:
+- name: "main-laravelshop"
+  routes:
+  - application_name: "laravelshop"
+    paths:
+    - "/*"
